@@ -1,2 +1,6 @@
 npm i class-validator class-transformer @nestjs/config cookie-parser
 npm i -D @types/cookie-parser
+
+npm i -D prisma
+npx prisma init
+npm i @prisma/client
