@@ -24,7 +24,6 @@ export class RolesGuard implements CanActivate {
       REQUEST_USER_KEY
     ];
 
-    console.log(contextRoles);
     // return contextRoles.some((role) => user.role === role);
     if (user.role === contextRoles.toString()) {
       return true;
