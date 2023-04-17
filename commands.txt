@@ -1,0 +1,2 @@
+npm i class-validator class-transformer @nestjs/config cookie-parser
+npm i -D @types/cookie-parser
