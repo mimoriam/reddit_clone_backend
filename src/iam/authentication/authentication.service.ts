@@ -126,6 +126,10 @@ export class AuthenticationService {
         throw new BadRequestException(`Bad Request`);
       } else if (err instanceof ForbiddenException) {
         throw new ForbiddenException();
+      } else if (err instanceof UnauthorizedException) {
+        return {
+          message: 'Email could not be sent',
+        };
       }
       throw new Error(err);
     }
