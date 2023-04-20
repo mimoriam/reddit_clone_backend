@@ -11,7 +11,7 @@ import {
 import { HashingService } from '../hashing/hashing.service';
 import { SignUpDto } from './dto/sign-up.dto';
 import { PrismaService } from '../../prisma.service';
-import { Prisma, User } from '@prisma/client';
+import { Prisma, Role, User } from '@prisma/client';
 import { SignInDto } from './dto/sign-in.dto';
 import { JwtService } from '@nestjs/jwt';
 import jwtConfig from '../config/jwt.config';
@@ -51,7 +51,7 @@ export class AuthenticationService {
     try {
       const { username, email, role } = signUpDto;
 
-      if (role === 'ADMIN') {
+      if (role === 'ADMIN' || role === Role.ADMIN.toString()) {
         throw new ForbiddenException();
       }
 
